@@ -1,0 +1,20 @@
+a = 10 # Assign '10' value to 'a' variable
+type(a) # Checking variable type (O/P: int)
+
+b = 34.5 # Assign '34' value to 'b' variable
+type(b) # Checking variable type (O/P: float)
+
+Name = "Shubh" # Assign 'Shubh' value to 'Name' variable
+type(Name) # Checking variable type (O/P: str)
+
+DOB = "15/02/1997" # Assign '15/02/1997' value to 'DOB' variable
+type(DOB) # Checking variable type (O/P: str)
+
+ph = 2344422352332 # Assign '2344422352332' value to 'ph' variable
+type(ph) # Checking variable type (O/P: int)
+
+PH = 879879789879 # Assign '879879789879' value to 'PH' variable
+type(PH) # Checking variable type (O/P: int)
+
+Marital_Status = True # Assign 'True' value to 'Marital_Status' variable
+type(Marital_Status) # Checking variable type (O/P: bol)

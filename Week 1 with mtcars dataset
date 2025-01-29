@@ -1,0 +1,63 @@
+
+data(mtcars) # mtcars data set
+
+str(mtcars) # Get structure of mtcars data 
+
+View(mtcars) # To view the data set
+
+head(mtcars) # Show the first 6 rows
+
+summary(mtcars) # summary function shows the statistical summary of each column in data set
+
+mean(mtcars$mpg) # It will give the average value
+
+median(mtcars$mpg) # It will give the middle value
+
+sd(mtcars$mpg) # It will give the standard deviation value
+
+# Plotting histogram 
+hist(mtcars$mpg, main = "Distribution of MPG", xlab = "Miles Per Gallon", col = "blue") 
+
+## Scatter Plot
+plot(mtcars$mpg, mtcars$hp, main = "MPG vs Horsepower", xlab = "MPG", ylab = "Horsepower", col = "red") 
+
+## install package dplyr
+install.packages("dplyr") # install package
+library(dplyr) # to see the package install
+mtcars %>% 
+group_by(cyl) %>% 
+summarize(mean_mpg = mean(mpg))
+
+##----------------------------------------X----------------------------------------------------------------------------------------------------
+
+Question 1. What trends do you notice between mpg and hp?
+
+Answer: Analyse the relationship between mpg and hp: 
+	Generally, cars with higher horsepower (hp) tend to have lower miles per gallon (mpg). High performance engine generated more horsepower and consume more fuel, leading to decrease in fuel efficiency. Cars with lower hp values provide wider range of mpg values. Cars with higher hp values consistently have low mpg values.
+
+	If the horsepower increases, fuel efficiency decreases.
+	High performance engine priorities power over fuel economy.
+	scatter plot will show data points sloping downward from left to right, illustrating the negative correlation between mpg and hp
+
+—————————————————————————————————————————————————————————————————
+
+Question 2. How does mpg vary across different cyl groups?
+
+Answer.  mpg values vary significantly across different cylinder groups:
+		1. Cars with 4 cylinders are the most fuel efficient.
+		2. Cars with 6 cylinders are the moderate fuel efficient.
+		3. Cars with 8 cylinders are the least fuel efficient.  
+
+	Using earlier dplyr code, We can can calculate the mean mpg of each cylinder group:
+		Cylinder					Average (mpg)
+		4							26.66
+		6							19.74
+		8							15.10
+
+
+	Cars with fewer cylinder typically have smaller engine, leading to lower fuel consumption.
+	Vehicle with more cylinder often have larger, heavier engines which can reduce fuel efficiency.
+	cars with 6 and 8 cylinders are tuned for high performance rather then efficiency.	
+
+———————————————X——————————————————————————————————————————————————
+

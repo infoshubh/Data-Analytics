@@ -1,0 +1,485 @@
+## Comment syntax
+
+## variable initialize and assign value
+varR <- "Shubh"
+## print
+print(varR)
+
+varx <- 5
+
+vary <- "shubh"
+
+## check data type of variable
+class(varx)
+class(vary)
+
+## return te list of variable initialize
+ls()
+
+## remove varx varable 
+rm(varx)
+
+## return te list of variable initialize after removing varx
+ls()
+
+## ----------------------------X------------------------------
+
+## Arithmatic Oprators
+vara <- 5
+varb <- 2
+print(vara + varb)
+print(vara - varb)
+print(vara * varb)
+print(vara / varb)
+
+## Relational Operators
+vara <- 5
+varb <- 2
+print(vara == varb)
+print(vara != varb)
+print(vara > varb)
+print(vara < varb)
+print(vara >= varb)
+print(vara <= varb)
+
+## Logical Operators
+varc <- TRUE
+vard <- FALSE
+
+print(!varc)
+print(varc & vard)
+print(varc | vard)
+isTRUE(varc)
+
+## ----------------------------X------------------------------
+
+## Decision Making (If, If-else, Switch)
+## If statement
+vare <- 5
+var
+if(vare > 2){
+  print('I am Inside If')
+}
+
+## If else statement
+if(vare > 2){
+  print('I am Inside If')
+}else{
+  print('I am Inside else')
+}
+
+## Switch statement, switch(expression, case1, case2)
+x <- switch(
+  2,
+  'First',
+  'Second',
+  'Third',
+  'Fourth',
+  'Fifth'
+)
+print(x)
+
+## ----------------------------X------------------------------
+
+## loop (For loop, Repeat loop, While loop)
+## for loop
+y <- LETTERS[1:7]
+for( i in y){
+  print(i) 
+}
+
+## While loop
+values <- c("While loop")
+count <- 5
+
+while(count < 7){
+  print(values)
+  count = count + 1;
+}
+
+## Repeat loop
+x <- c("Hello Shubh")
+count <- 2
+
+repeat {
+  print(x)
+  count <- count + 1
+  
+  if(count > 7){
+    break
+  }
+}
+
+## ----------------------------X------------------------------
+
+## Arrays
+## Create 2 vectors of different lengths.
+vector1 <- c(6,2,1)
+vector2 <- c(10,16,22,43,15,25)
+
+# vector as input to array.
+result <- array(c(vector1,vector2),dim = c(3,3,2))
+print(result)
+
+# Accessing array element
+print(result[1,2,1])
+print(result[1,3,1])
+
+# Manipulating array
+mat1 <- result[2,2,1]
+print(mat1)
+
+mat2 <- result[3,3,1]
+print(mat2)
+
+print(mat1 + mat2)
+
+## ----------------------------X------------------------------
+
+## Function, functionName <- function(Argument_Optional){ //statement }
+myFunc <- function(a){
+  for(i in 1:a){
+    b <- i*2
+    print(b)
+  }
+}
+
+# Calling a function
+myFunc(3)
+## ----------------------------X------------------------------
+## String, "Hello" 'Hello'
+#Valid String
+c <- "single quote ' in between doble quote"
+print(c)
+d <- 'Double quote " in between single quote'
+print(d)
+
+#Invalid String
+e <- 'Mixed Quote"
+print(e)
+f <- 'Single quote ' inside single quote'
+print(f)
+
+## String manipulation
+abc <- "Hello Man"
+def <- 'How'
+ghi <- "are you felling?"
+
+print(paste(abc,def,ghi))
+print(paste(abc,def,ghi, sep = "-"))
+print(paste(abc,def,ghi, sep = "", collapse = ""))
+
+## ----------------------------X------------------------------
+## Atomic vector of type character
+print("abc")
+
+## Atomic vector of type double
+print(12.5)
+
+## Atomic vector of type integer
+print(34L)
+
+## Atomic vector of type logical
+print(TRUE)
+
+## Atomic vector of type complex
+print(2+3i)
+
+## Atomic vector of type raw
+print(charToRaw('hello'))
+
+## Modifying vector
+
+# Create 2 vector
+v1 <- c(3,8,4,5,0,11)
+v2 <- c(4,11,0,8,1,2)
+
+# Vector addition
+addResult <- v1 + v2
+print(addResult)
+
+# Vector subtraction
+subResult <- v1 - v2
+print(subResult)
+
+# Vector multiplication
+mulResult <- v1 * v2
+print(mulResult)
+
+# Vector division
+divResult <- v1 / v2
+print(divResult)
+
+## ----------------------------X------------------------------
+## List
+
+# create a list containing string, numbers, vectors and a logical values.
+list_data <- list("Red", "Green", c(21,32,11), TRUE, 51.23, 119.1)
+print(list_data)
+
+# Access the first element of list
+print(list_data[1])
+
+# Access the third element
+print(list_data[3])
+
+# Give name of the element s in the list
+names(list_data) <- c("1st quater", "A_Matrix", "A Inner List")
+
+# Add element at some position in the list
+list_data[4] <- "New Element"
+print(list_data[4])
+
+# Remove the element
+list_data[4] <- NULL
+print(list_data[4])
+
+# Update the 3rd element
+list_data[3] <- "Updated element"
+print(list_data)
+
+## ----------------------------X------------------------------
+
+## Matrices
+P <- matrix(c(3:14), nrow = 4, byrow = TRUE)
+print(P)
+
+# Access the element at 3rd column and 1st row
+print(P[1,3])
+
+# Access the element at 2nd column and 4th row
+print(P[4,2])
+
+# Create new matrix
+Q <- matrix(c(14:25), nrow = 4, byrow = TRUE)
+print(Q)
+
+print(P + Q)
+print(P - Q)
+print(P * Q)
+print(P / Q)
+
+## ----------------------------X------------------------------
+
+## Factors
+data <- c("East","West","East","North","East","West","West","West","East","North")
+
+# Apply the factor function
+factor_data <- factor(data)
+  
+print(factor_data)
+
+# Generating factor level
+# 3 is the integer giving the number of levels.
+# 4 is the integer giving the number of replications.
+
+v <- gl(3, 4, labels = c("abc", "def", "asc"))
+print(v)
+
+## ----------------------------X------------------------------
+
+## Data Frames, syntax: varName <- data.frame(Values)
+employeeData <- data.frame(
+  employee_id = c(1:4),
+  employee_name = c("Shubh", "Ashish", "Rupesh", "Swapnil"),
+  salary = c(5000, 6000, 7000, 8000),
+  stringsAsFactors = FALSE
+)
+
+print(employeeData)
+
+# Get structure of data
+str(employeeData)
+
+summary(employeeData)
+
+# Adding column
+employeeData$department <- c("Network", "Software", "Mobile", "Web")
+
+print(employeeData)
+
+## ----------------------------X------------------------------
+
+## Packages
+# Get library location that contains R packages
+.libPaths()
+
+# Get the list of all packages installed
+library()
+
+# Get all packages curently loaded in the R environment
+search()
+
+# Install new packages called XML
+install.packages("XML")
+
+# Load the package named "XML"
+library("XML")
+
+## ----------------------------X------------------------------
+
+## Data Reshaping
+# Create vector objects
+cityr <- c("Delhi", "Bangalore", "Chennai", "Mumbai")
+zipcode <- c(303602, 918104, 046161, 580294)
+
+# Combine vectors in one dat frame
+oldAddresses <- cbind(cityr, zipcode)
+
+# Print a header
+print(oldAddresses)
+
+# Create another data frame with similar column
+newAddress <- data.frame(
+  cityr = c("Punjab", "Chandigarh"),
+  zipcode = c("802330", "133949")
+)
+
+# Print the data frame
+print(newAddress)
+
+# Combine rows from both the data frames
+totalAddresses <- rbind(oldAddresses,newAddress)
+
+print(totalAddresses)
+
+## ----------------------------X------------------------------
+
+## Opening Files
+data1 <- read.csv("Sample.csv")
+print(data1)
+
+# See the number or columns
+print(ncol(data1))
+
+# See the number or rows
+print(nrow(data1))
+
+# See the maximum value in 'KM' column
+print(max(data1$KM))
+
+# See the complete row data whose maximum value in 'KM' column
+maxDetails <- subset(data1, KM == max(KM))
+
+print(maxDetails)
+
+write.csv(totalAddresses, "output.csv")
+newData <- read.csv("output.csv")
+print(newData)
+print(max(newData$zipcode))
+maxDetails <- subset(newData, zipcode == max(zipcode))
+print(maxDetails)
+
+## ----------------------------X------------------------------
+## Web Data
+
+install.packages("RCurl")
+
+library(RCurl)
+
+# To get data from web
+sample <- read.table("https://www.ats.ucla.edu/stat/examples/ara/angell.txt")
+
+print(sample)
+
+## ----------------------------X------------------------------
+## Database
+
+## ----------------------------X------------------------------
+## Plotting (Pie charts, Bar chart, Box plots, Histogram, Line graphs, Scatter plots)
+
+# Pie Charts
+slices <- c(10,12,4,16,8)
+lbls <- c("Mango", "Orange", "Banana", "Jack", "Pine")
+
+pie(slices, labels = lbls, main = "Pie charts for fruits")
+
+# 3D pie chart
+install.packages('plotrix')
+library(plotrix)
+
+slices <- c(10,12,4,16,8)
+lbls <- c("Mango", "Orange", "Banana", "Jack", "Pine")
+
+pie3D(slices, labels = lbls, explode = 0.1, main = "Pie chart for fruits in 3D")
+
+
+## ----------------------------X------------------------------
+# Bar Charts
+# mtcars is a predefine dataset
+counts <- table(mtcars$gear)
+print(counts)
+
+barplot(counts, main = "Car Distrubition", xlab = "Number of Gears", ylab = "Count")
+
+## ----------------------------X------------------------------
+## Box plots
+boxplot(mpg~cyl, data=mtcars, main="Car milege data", xlab="Number of cylinders", ylab="Miles per gallon")
+
+## ----------------------------X------------------------------
+## Histogram, Syntax: hist(data), colored histogram hist(data, breaks, color)
+hist(mtcars$mpg)
+
+hist(mtcars$mpg, breaks = 9, col = "green")
+
+## ----------------------------X------------------------------
+## Line Graphs, Syntax: line(x, y, type)
+x <- c(1:3) # assign data from 1 to 3 to x variable
+y <- x # create some data
+
+par(pch=19, col="red") # Plotting sysmbo and color
+
+par(mfrow=c(2,4)) # All plots on one page
+
+ops <- c("p", "l", "o", "b", "c", "s", "S", "h")
+
+for(i in 1:length(ops)){
+  heading = paste("type=",ops[i])
+  plot(x, y, type="n", main=heading)
+  lines(x, y, type=ops[i])
+}
+
+## ----------------------------X------------------------------
+## Scatter Plots, Syntax: plot(x,y)
+attach(mtcars)
+
+plot(wt, mpg, main="Scatter Plot example", xlab="Car Weight", ylab="Mile Per Gallon", pch=19)
+
+## ----------------------------X------------------------------
+## Mean, Median, Mode
+## Mean: It is nothing but average value in the collection.
+## Median: It is middle most value in the collection.
+## mode: It is the most repeated value in data set or collection.
+
+x <- cars$speed
+print(x)
+
+mean(x) # It will give the average value i.e. 15.4
+
+median(x) # It will give the middle value i.e. 15
+
+mode(x)
+
+
+## ----------------------------X------------------------------
+## Linear Regression, Syntax: lm(formula, Data)
+## It is a statistical tool used to find a relationship between 2 variables.
+## One variable is predictive and the other one is response variable.
+
+# The predictor vector
+x <- c(5.1, 5.5, 5.8, 6.1, 6.4, 6.7, 6.4, 6.1, 5.10, 5.7)
+
+# The response vector
+y <- c(63, 66, 69, 72, 75, 78, 75, 72, 69,66)
+
+# Apply the linear regression function i.e. lm()
+relation <- lm(y~x)
+
+summary(relation)
+
+# Find weight of a person with height 170
+a <- data.frame(x = 6.3)
+result <- predict(relation, a)
+print(result)
+
+## ----------------------------X------------------------------
